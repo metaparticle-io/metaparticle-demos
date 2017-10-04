@@ -13,6 +13,7 @@ mp.containerize(
 	{
 		ports: [8080],
 		repository: 'brendanburns',
+                runner: 'aci',
 		publish: true,
 		public: true
 	},

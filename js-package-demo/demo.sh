@@ -20,3 +20,11 @@ tmux new -d -s my-orig-session \
 	     "$(dirname ${BASH_SOURCE})/split_hit_docker.sh" \; \
 	     attach
 
+run "vi index.js"
+
+tmux new -d -s my-orig-session \
+             "$(dirname $BASH_SOURCE)/split_run_server_aci.sh" \; \
+             split-window -v -p 33 \
+             "$(dirname ${BASH_SOURCE})/split_hit_aci.sh" \; \
+             attach
+
