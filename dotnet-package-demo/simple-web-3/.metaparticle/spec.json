@@ -1,0 +1,26 @@
+{
+    "name": "server",
+    "guid": 1234567, 
+    "services": [ 
+        {
+               "name": "server",
+            "replicas": 4,
+            "containers": [
+                {
+                    "image": "brendanburns/dotnet-simple-web",
+                    "env": [{
+                        "name": "METAPARTICLE_IN_CONTAINER",
+                        "value": "true"
+                    }]
+                }
+            ],
+            "ports": [{
+                "number": 8080
+            }]
+        }
+    ],
+    "serve": {
+        "name": "server",
+        "public": true
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "name": "server-sharder",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": 8080,
+        "targetPort": 0
+      }
+    ],
+    "selector": {
+      "app": "server-sharder"
+    },
+    "type": "LoadBalancer"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}

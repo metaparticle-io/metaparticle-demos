@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "name": "server",
+    "creationTimestamp": null,
+    "labels": {
+      "app": "server"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": 8080,
+        "targetPort": 0
+      }
+    ],
+    "selector": {
+      "app": "server"
+    },
+    "clusterIP": "None"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}

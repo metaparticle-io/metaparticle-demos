@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "name": "server-sharder",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "replicas": 3,
+    "selector": {
+      "matchLabels": {
+        "app": "server-sharder"
+      }
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "app": "server-sharder"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "sharder",
+            "image": "brendanburns/sharder",
+            "env": [
+              {
+                "name": "SHARD_ADDRESSES",
+                "value": "http://server-0.server:8080,http://server-1.server:8080,http://server-2.server:8080"
+              }
+            ],
+            "resources": {}
+          }
+        ]
+      }
+    },
+    "strategy": {}
+  },
+  "status": {}
+}

@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "name": "server",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "replicas": 3,
+    "selector": {
+      "matchLabels": {
+        "app": "server"
+      }
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "app": "server"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "server-0",
+            "image": "brendanburns/dotnet-simple-web",
+            "env": [
+              {
+                "name": "METAPARTICLE_IN_CONTAINER",
+                "value": "true"
+              }
+            ],
+            "resources": {}
+          }
+        ]
+      }
+    },
+    "serviceName": "server",
+    "updateStrategy": {}
+  },
+  "status": {
+    "replicas": 0
+  }
+}
